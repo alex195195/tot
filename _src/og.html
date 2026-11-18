@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<!-- Source for assets/img/og-*.png (1200x630). Rendered with headless Chrome; ?lang=uk|en -->
+<style>
+  html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; }
+  body { font-family: ui-rounded, "SF Pro Rounded", -apple-system, sans-serif; color: #2b2118;
+    background: linear-gradient(135deg, #fffaf2 0%, #ffe6cf 100%); display: flex; align-items: center; }
+  .text { flex: 1; padding: 0 0 0 72px; }
+  .brand { display: flex; align-items: center; gap: 18px; font-weight: 800; font-size: 40px; margin-bottom: 30px; }
+  .brand img { width: 84px; height: 84px; border-radius: 20px; }
+  h1 { font-size: 58px; line-height: 1.08; margin: 0 0 26px; font-weight: 800; letter-spacing: -.01em; }
+  p { font-size: 28px; color: #6e5f52; margin: 0; }
+  .shots { width: 470px; height: 630px; position: relative; }
+  .shots img { position: absolute; width: 230px; border-radius: 26px; box-shadow: 0 20px 50px rgba(120,70,20,.25); }
+  .shots img:nth-child(1) { left: 10px; top: 70px; }
+  .shots img:nth-child(2) { left: 210px; top: 30px; }
+</style>
+</head>
+<body>
+  <div class="text">
+    <div class="brand"><img src="../assets/img/logo.webp" alt="">ToT</div>
+    <h1 id="h"></h1>
+    <p id="p"></p>
+  </div>
+  <div class="shots">
+    <img id="s1" alt="">
+    <img id="s2" alt="">
+  </div>
+<script>
+  var lang = new URLSearchParams(location.search).get("lang") || "en";
+  var t = {
+    uk: ["Перші слова вашим голосом, рідною мовою", "8 мов · без реклами · одна покупка"],
+    en: ["First words in your voice, in your language", "8 languages · no ads · one purchase"]
+  }[lang];
+  document.getElementById("h").textContent = t[0];
+  document.getElementById("p").textContent = t[1];
+  document.getElementById("s1").src = "../assets/img/" + lang + "/02_name.webp";
+  document.getElementById("s2").src = "../assets/img/" + lang + "/01_home.webp";
+</script>
+</body>
+</html>
