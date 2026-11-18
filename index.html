@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ToT — First Words for Babies</title>
+<meta name="description" content="ToT — first words for babies in your voice, in your language. / Перші слова для малят вашим голосом, рідною мовою.">
+<link rel="canonical" href="https://alex195195.github.io/tot/">
+<link rel="alternate" hreflang="uk" href="https://alex195195.github.io/tot/uk/">
+<link rel="alternate" hreflang="en" href="https://alex195195.github.io/tot/en/">
+<link rel="alternate" hreflang="x-default" href="https://alex195195.github.io/tot/">
+<meta name="theme-color" content="#fffaf2">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ToT">
+<meta property="og:title" content="ToT — First Words for Babies">
+<meta property="og:description" content="First words in your voice, in your language. 8 languages. No ads, no subscriptions.">
+<meta property="og:url" content="https://alex195195.github.io/tot/">
+<meta property="og:image" content="https://alex195195.github.io/tot/assets/img/og-en.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+  .choose { min-height: 100svh; display: grid; place-items: center; text-align: center; padding: 32px 16px;
+    background: linear-gradient(180deg, var(--bg), var(--peach)); }
+  .choose img { width: 112px; height: 112px; border-radius: 26px; margin: 0 auto 18px; box-shadow: 0 14px 34px rgba(120,70,20,.2); }
+  .choose h1 { font-size: clamp(28px, 7vw, 40px); }
+  .choose p { color: var(--muted); max-width: 420px; margin: 0 auto 26px; }
+  .pick { display: grid; gap: 12px; width: min(320px, 100%); margin: 0 auto; }
+  .pick a { display: block; text-decoration: none; background: var(--card); color: var(--ink); border: 2px solid var(--line);
+    border-radius: 16px; padding: 16px; font-weight: 800; font-size: 19px; }
+  .pick a.preferred { background: var(--ink); color: #fff; border-color: var(--ink); }
+</style>
+</head>
+<body>
+<main class="choose">
+  <div>
+    <img src="assets/img/logo.webp" width="112" height="112" alt="ToT logo">
+    <h1>ToT: First Words for Babies</h1>
+    <p>First words in your voice, in your language.<br><span lang="uk">Перші слова вашим голосом, рідною мовою.</span></p>
+    <nav class="pick" aria-label="Language / Мова">
+      <a href="uk/" hreflang="uk" lang="uk" data-lang="uk">Українська</a>
+      <a href="en/" hreflang="en" lang="en" data-lang="en">English</a>
+    </nav>
+  </div>
+</main>
+<script>
+  // Highlights the language that matches the browser; no redirect, no storage, no tracking.
+  (function () {
+    var langs = (navigator.languages || [navigator.language || "en"]).map(function (l) { return String(l).toLowerCase(); });
+    var uk = langs.some(function (l) { return l.indexOf("uk") === 0 || l.indexOf("ru") === 0; });
+    var el = document.querySelector('[data-lang="' + (uk ? "uk" : "en") + '"]');
+    if (el) el.classList.add("preferred");
+  })();
+</script>
+</body>
+</html>

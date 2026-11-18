@@ -1,0 +1,15 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>preview</title>
+<!-- Local preview only: both language pages at iPhone width (390px). Not linked from the site. -->
+<style>body{margin:0;background:#888;display:flex;gap:20px;padding:20px;align-items:flex-start}
+iframe{width:390px;border:0;background:#fff;height:var(--h,7600px)}</style></head>
+<body>
+<iframe src="../uk/" title="uk"></iframe>
+<iframe src="../en/" title="en"></iframe>
+<script>
+  // Size each frame to its content so the whole page is visible.
+  document.querySelectorAll("iframe").forEach(function (f) {
+    f.addEventListener("load", function () { f.style.height = f.contentDocument.documentElement.scrollHeight + "px"; });
+  });
+</script>
+</body></html>
