@@ -46,10 +46,17 @@
   </div>
 </main>
 <script>
-  // Highlights the language that matches the browser; no redirect, no storage, no tracking.
+  // Sends visitors straight to their language: uk/ru browsers -> /uk/, everyone else -> /en/.
+  // Keeps the query string (e.g. Instagram utm tags). Add ?choose to the URL to see this picker instead.
+  // No storage, no tracking. Without JavaScript the picker below stays visible.
   (function () {
     var langs = (navigator.languages || [navigator.language || "en"]).map(function (l) { return String(l).toLowerCase(); });
     var uk = langs.some(function (l) { return l.indexOf("uk") === 0 || l.indexOf("ru") === 0; });
+    var target = uk ? "uk/" : "en/";
+    if (!/[?&]choose\b/.test(location.search)) {
+      location.replace(target + location.search + location.hash);
+      return;
+    }
     var el = document.querySelector('[data-lang="' + (uk ? "uk" : "en") + '"]');
     if (el) el.classList.add("preferred");
   })();
