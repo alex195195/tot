@@ -50,7 +50,10 @@ section { padding: 56px 0; }
   border-radius: 14px; padding: 12px 22px; font-weight: 700; font-size: 17px; min-height: 52px; }
 .store-btn small { display: block; font-weight: 500; font-size: 12px; opacity: .8; line-height: 1.1; }
 .store-btn span { line-height: 1.2; }
-.store-btn[aria-disabled="true"] { cursor: default; }
+.store-btn .apple { flex: 0 0 auto; }
+a.store-btn { transition: transform .15s ease, box-shadow .15s ease; box-shadow: 0 6px 18px rgba(40, 25, 10, .18); }
+a.store-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(40, 25, 10, .24); }
+a.store-btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
 .store-note { color: var(--muted); font-size: 14px; margin-top: 10px; }
 
 /* Features */
